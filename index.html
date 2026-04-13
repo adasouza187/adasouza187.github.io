@@ -3,126 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adriano Souza | Portfólio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Adriano Souza | Data Analytics Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: white;
-}
+  :root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --accent-blue: #2563eb;
+    --gradient-start: #2563eb;
+    --gradient-end: #7c3aed;
+    --glow-shadow: rgba(37, 99, 235, 0.4);
+  }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 80px 20px 40px;
-}
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark), #1c2a42);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
 
-header h1 {
-  font-size: 42px;
-}
+  /* HEADER */
+  header {
+    text-align: center;
+    padding: 100px 20px 60px;
+  }
 
-header p {
-  color: #94a3b8;
-  max-width: 700px;
-  margin: auto;
-}
+  header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-}
+  header p {
+    color: var(--text-secondary);
+    max-width: 750px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.6;
+  }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-}
+  /* CONTAINER */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
 
-/* CARD */
-.card {
-  background: #1e293b;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: 0.3s;
-  border: 1px solid rgba(255,255,255,0.08);
-}
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
+  /* CARD - POLIMENTO AVANÇADO */
+  .card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.06);
+    position: relative; /* Para o efeito glow */
+  }
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+  /* Efeito Glow no Card Inteiro (Hover) */
+  .card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 15px -1px var(--glow-shadow);
+  }
 
-.card-content {
-  padding: 20px;
-}
+  /* Container da Imagem com Gradiente de Glow */
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
 
-.button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px; /* Aumentei um pouco para ficar mais elegante */
-  border-radius: 8px;
-  /* Gradiente moderno mesclando azul com um leve roxo/ciano */
-  background: linear-gradient(135deg, #2563eb, #7c3aed); 
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
-  border: none;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); /* Sombra suave na cor do botão */
-}
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
 
-.button:hover {
-  /* No hover, o gradiente inverte ou brilha mais */
-  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
-  transform: scale(1.05); /* Dá um leve "zoom" no botão */
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-}
-/* Estilo para as competências no Sobre Mim */
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
-}
+  /* Gradiente Glow Sutil sobre a Imagem no Hover */
+  .card:hover .card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(0deg, rgba(15, 23, 42, 0.8) 0%, rgba(37, 99, 235, 0.1) 60%);
+    pointer-events: none;
+  }
 
-.skill-badge {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  color: #e2e8f0;
-}
-/* SOBRE */
-.sobre {
-  margin-top: 60px;
-  text-align: center;
-}
+  /* Efeito Zoom da Imagem (Hover) */
+  .card:hover .card-image-wrapper img {
+    transform: scale(1.1);
+  }
 
-.sobre p {
-  max-width: 700px;
-  margin: auto;
-  color: #94a3b8; /* COR CORRIGIDA */
-}
+  .card-content {
+    padding: 25px;
+  }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #64748b;
-}
+  .card-content h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .card-content p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 20px;
+    min-height: 48px; /* Mantém os botões alinhados */
+  }
+
+  /* BOTÃO GRADIENTE REFINADO (Hover avançado) */
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  }
+
+  .button:hover {
+    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start)); /* Inverte */
+    transform: scale(1.06);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+  }
+
+  /* SOBRE MIM - REORGANIZADO */
+  .sobre {
+    margin-top: 100px;
+    padding: 60px 40px;
+    background: rgba(30, 41, 59, 0.5); /* Fundo sutil */
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+
+  .sobre h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
+
+  .sobre p {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .sobre p strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  /* SKILLS BADGES REFINADOS (PILL BADGES) */
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .skill-badge {
+    background: rgba(255, 255, 255, 0.04); /* Mais discreto */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 18px; /* Mais "pílula" */
+    border-radius: 50px; /* Círculo total nas pontas */
+    font-size: 13px;
+    font-weight: 500;
+    color: #e2e8f0;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: default;
+  }
+
+  .skill-badge:hover {
+    background: rgba(37, 99, 235, 0.15); /* Destaque sutil no hover */
+    transform: translateY(-3px);
+  }
+
+  /* FOOTER REFINADO */
+  footer {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: #64748b;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+  }
+
+  .footer-links a:hover {
+    color: #0077b5; /* Cor do LinkedIn no hover */
+  }
+
+  .footer-links svg {
+    width: 20px; height: 20px;
+    fill: currentColor;
+  }
+
+  footer span {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
 </style>
 </head>
 
@@ -131,18 +248,19 @@ footer {
 <header>
   <h1>Adriano Alves de Souza</h1>
   <p>
-  Portfólio de projetos em Data Analytics e Business Intelligence, com foco em Power BI, Python, SQL e Databricks.
-  Desenvolvimento de dashboards, ETL e visualizações avançadas com HTML, CSS e SVG.
+    Portfólio de projetos em Data Analytics e Business Intelligence, com foco em Power BI, Python, SQL e Databricks.
+    Desenvolvimento de dashboards, ETL e visualizações avançadas com HTML, CSS e SVG.
   </p>
 </header>
 
 <div class="container">
 
-  <!-- PROJETOS -->
   <div class="grid">
 
     <div class="card">
-    <img src="https://raichu-uploads.s3.amazonaws.com/companypagedetail_08ce5b79-e29a-4916-a6dc-4c3bfc1228f7.jpg" alt="DashboardS com visuais customizados">
+      <div class="card-image-wrapper">
+        <img src="https://raichu-uploads.s3.amazonaws.com/companypagedetail_08ce5b79-e29a-4916-a6dc-4c3bfc1228f7.jpg" alt="Dashboards com visuais customizados">
+      </div>
       <div class="card-content">
         <h2>📊 Dashboards </h2>
         <p>Análise de dados com foco em geração de insights estratégicos</p>
@@ -153,7 +271,9 @@ footer {
     </div>
 
     <div class="card">
-     <img src="https://media.licdn.com/dms/image/v2/D4E12AQFou7683VCyYg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1738591254261?e=2147483647&v=beta&t=bR7LyPQArLRuuJOglZZiHrpEdJvom82VHxt0P15sB40" alt="Python para análise de dados">
+      <div class="card-image-wrapper">
+        <img src="https://media.licdn.com/dms/image/v2/D4E12AQFou7683VCyYg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1738591254261?e=2147483647&v=beta&t=bR7LyPQArLRuuJOglZZiHrpEdJvom82VHxt0P15sB40" alt="Python para análise de dados">
+      </div>
       <div class="card-content">
         <h2>🐍 Análise com Python</h2>
         <p>Tratamento e análise de dados com Python.</p>
@@ -164,7 +284,9 @@ footer {
     </div>
 
     <div class="card">
-      <img src="https://b-eye.com/wp-content/uploads/2025/05/img-182.jpg" alt="Databricks">
+      <div class="card-image-wrapper">
+        <img src="https://b-eye.com/wp-content/uploads/2025/05/img-182.jpg" alt="Databricks">
+      </div>
       <div class="card-content">
         <h2>⚡ Projeto Databricks</h2>
         <p>Pipeline de dados e processamento em larga escala.</p>
@@ -176,37 +298,38 @@ footer {
 
   </div>
 
-  <!-- SOBRE -->
-<div class="sobre">
-  <h2>👤 Sobre Mim</h2>
-  <p>
-    Especialista em <strong>Data Analytics</strong> com sólida trajetória na transformação de dados brutos em ativos estratégicos. 
-    Minha expertise abrange desde a construção de pipelines de ETL escaláveis até o design de dashboards de alto impacto.
-  </p>
-  
-  <p>
-    Com foco em performance e usabilidade, utilizo <strong>storytelling</strong> para conectar métricas complexas aos objetivos de negócio, 
-    facilitando a tomada de decisão baseada em evidências.
-  </p>
+  <div class="sobre">
+    <h2>👤 Sobre Mim</h2>
+    <p>
+      Especialista em <strong>Data Analytics</strong> com sólida trajetória na transformação de dados brutos em ativos estratégicos. 
+      Minha expertise abrange desde a construção de pipelines de ETL escaláveis até o design de dashboards de alto impacto.
+    </p>
+    
+    <p>
+      Com foco em performance e usabilidade, utilizo <strong>storytelling</strong> para conectar métricas complexas aos objetivos de negócio, 
+      facilitando a tomada de decisão baseada em evidências.
+    </p>
 
-  <div class="skills-container">
-    <span class="skill-badge">Power BI (DAX/M)</span>
-    <span class="skill-badge">SQL Avançado</span>
-    <span class="skill-badge">Python (Pandas/NumPy)</span>
-    <span class="skill-badge">Databricks & PySpark</span>
-    <span class="skill-badge">ETL/ELT Pipelines</span>
-    <span class="skill-badge">UI/UX para Dashboards</span>
+    <div class="skills-container">
+      <span class="skill-badge">Power BI (DAX/M)</span>
+      <span class="skill-badge">SQL Avançado</span>
+      <span class="skill-badge">Python (Pandas/NumPy)</span>
+      <span class="skill-badge">Databricks & PySpark</span>
+      <span class="skill-badge">ETL/ELT Pipelines</span>
+      <span class="skill-badge">UI/UX para Dashboards</span>
+    </div>
   </div>
+
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <p>
-    🔗 <a href="https://www.linkedin.com" target="_blank" style="color:#94a3b8;">
-    Meu LinkedIn
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/SEU_LINKEDIN_AQUI" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 1 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+      Meu LinkedIn
     </a>
-  </p>
-  © 2026 Adriano Souza
+  </div>
+  <span>© 2026 Adriano Souza | Carapicuíba - SP</span>
 </footer>
 
 </body>
