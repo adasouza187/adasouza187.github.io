@@ -88,7 +88,23 @@ header p {
   transform: scale(1.05); /* Dá um leve "zoom" no botão */
   box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
 }
+/* Estilo para as competências no Sobre Mim */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
 
+.skill-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #e2e8f0;
+}
 /* SOBRE */
 .sobre {
   margin-top: 60px;
@@ -161,15 +177,26 @@ footer {
   </div>
 
   <!-- SOBRE -->
-  <div class="sobre">
-    <h2>👤 Sobre mim</h2>
-<p>
-Profissional de Data Analytics com experiência em Power BI, SQL, Python e Databricks, atuando no desenvolvimento de soluções end-to-end voltadas à análise de dados e inteligência de negócios. 
-Possuo forte atuação em modelagem de dados, construção de pipelines de ETL e desenvolvimento de dashboards interativos com foco em performance, usabilidade e storytelling com dados. 
-Meu objetivo é transformar dados complexos em insights claros e estratégicos, apoiando a tomada de decisão e gerando valor para o negócio.
-</p>
-  </div>
+<div class="sobre">
+  <h2>👤 Sobre Mim</h2>
+  <p>
+    Especialista em <strong>Data Analytics</strong> com sólida trajetória na transformação de dados brutos em ativos estratégicos. 
+    Minha expertise abrange desde a construção de pipelines de ETL escaláveis até o design de dashboards de alto impacto.
+  </p>
+  
+  <p>
+    Com foco em performance e usabilidade, utilizo <strong>storytelling</strong> para conectar métricas complexas aos objetivos de negócio, 
+    facilitando a tomada de decisão baseada em evidências.
+  </p>
 
+  <div class="skills-container">
+    <span class="skill-badge">Power BI (DAX/M)</span>
+    <span class="skill-badge">SQL Avançado</span>
+    <span class="skill-badge">Python (Pandas/NumPy)</span>
+    <span class="skill-badge">Databricks & PySpark</span>
+    <span class="skill-badge">ETL/ELT Pipelines</span>
+    <span class="skill-badge">UI/UX para Dashboards</span>
+  </div>
 </div>
 
 <!-- FOOTER -->
