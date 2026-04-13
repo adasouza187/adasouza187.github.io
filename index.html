@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adriano Souza | Portfólio</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
 }
@@ -21,12 +21,12 @@ header {
 
 header h1 {
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 header p {
   color: #94a3b8;
-  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
 }
 
 /* CONTAINER */
@@ -47,7 +47,7 @@ header p {
 .card {
   background: #1e293b;
   border-radius: 16px;
-  padding: 25px;
+  overflow: hidden;
   transition: 0.3s;
   border: 1px solid rgba(255,255,255,0.08);
 }
@@ -57,31 +57,37 @@ header p {
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* TITULO CARD */
-.card h2 {
-  margin-top: 0;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-/* TEXTO */
-.card p {
-  color: #cbd5f5;
+.card-content {
+  padding: 20px;
 }
 
-/* BOTÃO */
 .button {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
+  margin-top: 10px;
+  padding: 10px 16px;
   border-radius: 8px;
   background: #2563eb;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.button:hover {
-  background: #1d4ed8;
+/* SOBRE */
+.sobre {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.sobre p {
+  max-width: 700px;
+  margin: auto;
+  color: #cbd5f5;
 }
 
 /* FOOTER */
@@ -96,32 +102,73 @@ footer {
 <body>
 
 <header>
-  <h1>🚀 Adriano Souza</h1>
-  <p>Analista de BI | Excel | Linguagem M | SQL Server | Power BI | Figma | Data Storytelling | Databricks | Python</p>
+  <h1>Adriano Souza</h1>
+  <p>
+  Portfólio de projetos em Data Analytics e Business Intelligence, com foco em Power BI, Python, SQL e Databricks.
+  Desenvolvimento de dashboards, ETL e visualizações avançadas com HTML, CSS e SVG.
+  </p>
 </header>
 
 <div class="container">
 
+  <!-- PROJETOS -->
   <div class="grid">
 
     <div class="card">
-      <h2>📎 Conheça meu portfólio completo no GitHub </h2>
-      <p>Portfólio de projetos em Data Analytics e Business Intelligence, com foco em Power BI, Python, SQL e Databricks. 
-Desenvolvimento de dashboards interativos, modelagem de dados, ETL e visualizações avançadas com HTML, CSS e SVG, 
-transformando dados em insights estratégicos para tomada de decisão.</p>
-      <a class="button" href="https://github.com/adasouza187/Customer-Experience-Performance-NPS-Analysis" target="_blank">
-        Ver Projeto →
-      </a>
+      <img src="https://via.placeholder.com/400x200" alt="Dashboard NPS">
+      <div class="card-content">
+        <h2>📊 Dashboards </h2>
+        <p>Análise de Customer Experience com indicadores estratégicos.</p>
+        <a class="button" href="https://github.com/adasouza187/Customer-Experience-Performance-NPS-Analysis" target="_blank">
+          Ver Projeto →
+        </a>
+      </div>
     </div>
 
-    <!-- Você pode duplicar esse card para novos projetos -->
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Projeto Python">
+      <div class="card-content">
+        <h2>🐍 Análise com Python</h2>
+        <p>Tratamento e análise de dados com foco em insights.</p>
+        <a class="button" href="#" target="_blank">
+          Ver Projeto →
+        </a>
+      </div>
+    </div>
 
+    <div class="card">
+      <img src="https://via.placeholder.com/400x200" alt="Databricks">
+      <div class="card-content">
+        <h2>⚡ Projeto Databricks</h2>
+        <p>Pipeline de dados e processamento em larga escala.</p>
+        <a class="button" href="#" target="_blank">
+          Ver Projeto →
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SOBRE -->
+  <div class="sobre">
+    <h2>👤 Sobre mim</h2>
+    <p>
+    Profissional de Data Analytics com experiência em Power BI, SQL, Python e Databricks.
+    Atuo na construção de dashboards, modelagem de dados e desenvolvimento de soluções analíticas
+    que apoiam a tomada de decisão.
+    </p>
   </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-  © 2026 Adriano Souza • Portfólio
+  <p>
+    🔗 <a href="https://www.linkedin.com" target="_blank" style="color:#94a3b8;">
+    Meu LinkedIn
+    </a>
+  </p>
+  © 2026 Adriano Souza
 </footer>
 
 </body>
