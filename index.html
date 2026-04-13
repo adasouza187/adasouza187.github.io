@@ -70,12 +70,23 @@ header p {
 .button {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 16px;
+  padding: 12px 20px; /* Aumentei um pouco para ficar mais elegante */
   border-radius: 8px;
-  background: #2563eb;
+  /* Gradiente moderno mesclando azul com um leve roxo/ciano */
+  background: linear-gradient(135deg, #2563eb, #7c3aed); 
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+  border: none;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); /* Sombra suave na cor do botão */
+}
+
+.button:hover {
+  /* No hover, o gradiente inverte ou brilha mais */
+  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+  transform: scale(1.05); /* Dá um leve "zoom" no botão */
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
 }
 
 /* SOBRE */
