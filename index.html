@@ -1,73 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Portfólio - Adriano Souza</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adriano Souza | Portfólio</title>
 
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 40px 20px;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
 
-    h1 {
-      margin: 0;
-      font-size: 32px;
-    }
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
 
-    p {
-      color: #cbd5e1;
-    }
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
 
-    .container {
-      padding: 40px 20px;
-    }
+header p {
+  color: #94a3b8;
+  font-size: 18px;
+}
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
 
-    a {
-      text-decoration: none;
-      color: #2563eb;
-      font-weight: bold;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+/* CARD */
+.card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 25px;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* TITULO CARD */
+.card h2 {
+  margin-top: 0;
+}
+
+/* TEXTO */
+.card p {
+  color: #cbd5f5;
+}
+
+/* BOTÃO */
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #1d4ed8;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <h1>🚀 Adriano Souza</h1>
-  <p>Power BI | Data Analytics | Business Intelligence</p>
+  <p>Power BI • Data Analytics • Business Intelligence</p>
 </header>
 
 <div class="container">
 
-  <div class="card">
-    <h2>📊 Dashboard NPS</h2>
-    <p>Análise de Customer Experience com indicadores de NPS.</p>
-    <a href="https://github.com/adasouza187/Customer-Experience-Performance-NPS-Analysis" target="_blank">
-      Ver Projeto →
-    </a>
+  <div class="grid">
+
+    <div class="card">
+      <h2>📊 Dashboard NPS</h2>
+      <p>Análise de Customer Experience com indicadores de NPS e insights estratégicos.</p>
+      <a class="button" href="https://github.com/adasouza187/Customer-Experience-Performance-NPS-Analysis" target="_blank">
+        Ver Projeto →
+      </a>
+    </div>
+
+    <!-- Você pode duplicar esse card para novos projetos -->
+
   </div>
 
 </div>
+
+<footer>
+  © 2026 Adriano Souza • Portfólio
+</footer>
 
 </body>
 </html>
