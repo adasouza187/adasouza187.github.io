@@ -138,6 +138,7 @@
     font-size: 15px;
     transition: all 0.3s ease;
     border: none;
+    transition: transform 0.3s ease;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
   }
 
@@ -146,6 +147,8 @@
     transform: scale(1.06);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
   }
+  .card:hover .btn-projeto svg {
+  transform: translateX(5px); /* A setinha "foge" para a direita no hover do card */
 
   /* SOBRE MIM - REORGANIZADO */
   .sobre {
