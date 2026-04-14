@@ -17,15 +17,15 @@
     --glow-shadow: rgba(37, 99, 235, 0.4);
   }
 
-body {
+  body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, var(--bg-dark), #1c2a42);
     color: var(--text-primary);
     overflow-x: hidden;
-    position: relative; /* Necessário para os glows se posicionarem em relação ao body */
+    position: relative;
     min-height: 100vh;
-}
+  }
 
   /* HEADER */
   header {
@@ -59,28 +59,26 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
+    margin-bottom: 80px;
   }
 
-  /* CARD - POLIMENTO AVANÇADO */
+  /* CARD */
   .card {
     background: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid rgba(255,255,255,0.06);
-    position: relative; /* Para o efeito glow */
+    position: relative;
   }
 
-  /* Efeito Glow no Card Inteiro (Hover) */
-.card:hover {
+  .card:hover {
     transform: translateY(-12px);
-    /* Sombra externa + Glow + Luz interna (inset) */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 
                 0 0 15px -1px var(--glow-shadow),
                 inset 0 1px 1px rgba(255, 255, 255, 0.1);
-}
+  }
 
-  /* Container da Imagem com Gradiente de Glow */
   .card-image-wrapper {
     position: relative;
     width: 100%;
@@ -95,17 +93,6 @@ body {
     transition: transform 0.6s ease;
   }
 
-  /* Gradiente Glow Sutil sobre a Imagem no Hover */
-  .card:hover .card-image-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(0deg, rgba(15, 23, 42, 0.8) 0%, rgba(37, 99, 235, 0.1) 60%);
-    pointer-events: none;
-  }
-
-  /* Efeito Zoom da Imagem (Hover) */
   .card:hover .card-image-wrapper img {
     transform: scale(1.1);
   }
@@ -125,10 +112,9 @@ body {
     color: var(--text-secondary);
     font-size: 16px;
     margin-bottom: 20px;
-    min-height: 48px; /* Mantém os botões alinhados */
+    min-height: 48px;
   }
 
-  /* BOTÃO GRADIENTE REFINADO (Hover avançado) */
   .button {
     display: inline-block;
     padding: 12px 24px;
@@ -138,48 +124,47 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: none;
-    transition: transform 0.3s ease;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
   }
 
   .button:hover {
-    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start)); /* Inverte */
     transform: scale(1.06);
     box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
   }
 
-  /* SOBRE MIM - REORGANIZADO */
+  /* SOBRE MIM */
   .sobre {
-    margin-top: 100px;
+    margin-top: 60px;
     padding: 60px 40px;
-    background: rgba(30, 41, 59, 0.5); /* Fundo sutil */
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.04);
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.06);
     text-align: center;
+    backdrop-filter: blur(10px);
   }
 
   .sobre h2 {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .sobre p {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto 20px;
     color: var(--text-secondary);
     font-size: 17px;
-    line-height: 1.7;
+    line-height: 1.8;
   }
 
-  .sobre p strong {
+  .highlight {
     color: var(--text-primary);
     font-weight: 600;
+    border-bottom: 2px solid var(--accent-blue);
   }
 
-  /* SKILLS BADGES REFINADOS (PILL BADGES) */
   .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -189,23 +174,23 @@ body {
   }
 
   .skill-badge {
-    background: rgba(255, 255, 255, 0.04); /* Mais discreto */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 8px 18px; /* Mais "pílula" */
-    border-radius: 50px; /* Círculo total nas pontas */
-    font-size: 13px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
     font-weight: 500;
     color: #e2e8f0;
-    transition: background 0.3s ease, transform 0.3s ease;
-    cursor: default;
+    transition: all 0.3s ease;
   }
 
   .skill-badge:hover {
-    background: rgba(37, 99, 235, 0.15); /* Destaque sutil no hover */
+    background: rgba(37, 99, 235, 0.2);
+    border-color: var(--accent-blue);
     transform: translateY(-3px);
   }
 
-  /* FOOTER REFINADO */
+  /* FOOTER */
   footer {
     text-align: center;
     padding: 60px 20px;
@@ -217,7 +202,6 @@ body {
   .footer-links {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 20px;
     margin-bottom: 15px;
   }
@@ -225,28 +209,23 @@ body {
   .footer-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 15px;
-    
-.footer-links a:hover {
+  }
 
-    color: #0077b5; /* Cor do LinkedIn no hover */
-
+  .footer-links a:hover {
+    color: #0077b5;
+    transform: translateY(-2px);
   }
 
   .footer-links svg {
-    width: 20px; height: 20px;
+    width: 20px;
+    height: 20px;
     fill: currentColor;
   }
-
-  footer span {
-    font-size: 14px;
-    opacity: 0.8;
-  }
-
 </style>
 </head>
 
@@ -259,9 +238,9 @@ body {
     Desenvolvimento de dashboards, ETL e visualizações avançadas com HTML, CSS e SVG.
   </p>
 </header>
+
 <div class="container">
   <div class="grid">
-
     <div class="card">
       <div class="card-image-wrapper">
         <img src="https://raichu-uploads.s3.amazonaws.com/companypagedetail_08ce5b79-e29a-4916-a6dc-4c3bfc1228f7.jpg" alt="Dashboards">
@@ -297,11 +276,11 @@ body {
 
     <div class="card">
       <div class="card-image-wrapper">
-        <img src="https://migrati.com.br/wp-content/uploads/2022/12/MSSQL.jpg" alt="SQL Avançado">
+        <img src="https://migrati.com.br/wp-content/uploads/2022/12/MSSQL.jpg" alt="SQL Server">
       </div>
       <div class="card-content">
         <h2>💾 SQL Server</h2>
-        <p>Consultas ,Queries, otimização de banco de dados e views estratégicas.</p>
+        <p>Consultas, Queries, otimização de banco de dados e views estratégicas.</p>
         <a class="button" href="#" target="_blank">Ver Projeto →</a>
       </div>
     </div>
@@ -327,6 +306,7 @@ body {
         <a class="button" href="#" target="_blank">Ver Projeto →</a>
       </div>
     </div>
+  </div>
 
   <div class="sobre">
     <h2>👤 Sobre Mim</h2>
@@ -334,7 +314,6 @@ body {
       Especialista em <span class="highlight">Data Analytics</span> com sólida trajetória na transformação de dados brutos em ativos estratégicos. 
       Minha expertise abrange desde a construção de pipelines de ETL escaláveis até o design de dashboards de alto impacto.
     </p>
-    
     <p>
       Com foco em performance e usabilidade, utilizo <strong>storytelling</strong> para conectar métricas complexas aos objetivos de negócio, 
       facilitando a tomada de decisão baseada em evidências.
@@ -349,7 +328,6 @@ body {
       <span class="skill-badge">UI/UX para Dashboards</span>
     </div>
   </div>
-
 </div>
 
 <footer>
